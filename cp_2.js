@@ -53,7 +53,7 @@ function displayProducts(products) {
     productImage.alt = name;
 
     const productPrice = document.createElement("p");
-    productPrice.textContent = `$${price}`;
+    productPrice.textContent = ``$${price.toFixed(2)}``;
 
     card.appendChild(productImage);
     card.appendChild(productName);
