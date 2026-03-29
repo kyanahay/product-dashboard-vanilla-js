@@ -33,3 +33,39 @@ async function fetchProductsAsync() {
   }
 }
 
+function displayProducts(products) {
+  const productContainer = document.getElementById("product-container");
+  productContainer.innerHTML = "";
+
+  products.slice(0, 5).forEach((product) => {
+    const name = product.fields.name;
+    const price = product.fields.price / 100;
+    const image = product.fields.image[0].url;
+
+    const card = document.createElement("div");
+    card.classList.add("product-card");
+
+    const productName = document.createElement("h2");
+    productName.textContent = name;
+
+    const productImage = document.createElement("img");
+    productImage.src = image;
+    productImage.alt = name;
+
+    const productPrice = document.createElement("p");
+    productPrice.textContent = `$${price}`;
+
+    card.appendChild(productImage);
+    card.appendChild(productName);
+    card.appendChild(productPrice);
+
+    productContainer.appendChild(card);
+  });
+}
+
+function handleError(error) {
+  console.error(`An error occurred: ${error.message}`);
+}
+
+fetchProductsThen();
+fetchProductsAsync();
