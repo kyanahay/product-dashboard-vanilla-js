@@ -14,10 +14,9 @@ function fetchProductsThen() {
       });
     })
     .catch((error) => {
-      console.error("Fetch error:", error);
+     handleError(error);
     });
 }
-
 async function fetchProductsAsync() {
   try {
     const response = await fetch(apiURL);
