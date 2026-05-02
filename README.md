@@ -1,59 +1,77 @@
 # Product Dashboard
 
-This project is a simple JavaScript product dashboard that fetches product data from an external API and displays the first five products on the page.
+## Description
+This project is a simple product dashboard built using HTML, CSS, and JavaScript. It fetches product data from an external API and displays a selection of products dynamically on the page.
 
-## Overview
+The project demonstrates how to work with API data, handle asynchronous operations, and update the DOM.
 
-The app uses the Fetch API to retrieve product information from:
-
+## API Used
+Data is retrieved from:  
 https://www.course-api.com/javascript-store-products
 
-It demonstrates two ways of working with asynchronous JavaScript:
-
-- `.then()` and `.catch()`
-- `async` / `await`
-
-The product data is then displayed dynamically using DOM manipulation.
-
 ## Features
+- Fetches product data from an external API  
+- Uses both `.then()` and `async/await` approaches  
+- Displays the first 5 products  
+- Each product includes:
+  - Name  
+  - Image  
+  - Price (formatted to dollars)  
+- Handles errors if the API request fails  
+- Responsive grid layout for product display  
+- Hover effects for product cards  
 
-- Fetches product data from an external API
-- Displays product name, image, and price
-- Shows the first five products
-- Includes error handling for failed API requests
-- Demonstrates both promise-based and async/await syntax
+## Technologies Used
+- HTML5  
+- CSS3  
+- JavaScript  
 
-## Files
-
-- `index.html` - Main HTML structure
-- `style.css` - Styling for the product dashboard
-- `script.js` - JavaScript logic for fetching and displaying products
+## File Structure
+- `index.html` – Page structure  
+- `style.css` – Layout, styling, and responsiveness  
+- `script.js` – API fetching and DOM manipulation logic  
 
 ## How It Works
+1. A request is sent to the API to fetch product data.  
+2. The response is checked for errors.  
+3. Data is converted into JSON format.  
+4. The first five products are selected.  
+5. Product cards are created and displayed dynamically on the page.  
 
-1. The app fetches product data from the API.
-2. It checks if the response is successful.
-3. It converts the response into JSON.
-4. It displays the first five products as cards.
-5. If something goes wrong, an error message is logged in the console.
+## Key Functions
+
+### `fetchProductsThen()`
+Fetches data using `.then()` and logs product names to the console.
+
+### `fetchProductsAsync()`
+Fetches data using `async/await` and passes it to the display function.
+
+### `displayProducts(products)`
+- Clears existing content  
+- Creates product cards  
+- Displays product name, image, and price  
+
+### `handleError(error)`
+Logs errors to the console if a request fails.
 
 ## How to Run
+1. Download or clone the repository  
+2. Open `index.html` in a web browser  
+3. Products will load automatically  
 
-1. Download or clone the repository.
-2. Open `index.html` in a browser.
-3. The products should load automatically.
+## Concepts Demonstrated
+- Fetch API  
+- Promises (`.then()` / `.catch()`)  
+- Async/Await  
+- DOM manipulation  
+- Array methods (`forEach`, `slice`)  
+- Error handling  
+- CSS grid and layout styling  
 
-## JavaScript Concepts Used
-
-- Fetch API
-- Promises
-- Async/await
-- Error handling
-- DOM manipulation
-- Arrays
-- Objects
-- Template literals
+## Notes
+- Only the first 5 products are displayed for simplicity  
+- Prices are converted from cents to dollars  
+- This is a front-end only project (no backend)  
 
 ## Author
-
 Kyana Hay
